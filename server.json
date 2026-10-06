@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.chenwengui23/wanjige",
+  "title": "万机阁 Wanjige — 中文 AI 工具市场",
+  "description": "Chinese MCP tool marketplace: 15,552 callable tools for weather, stocks, FX, docs and calculations.",
+  "version": "1.0.1",
+  "websiteUrl": "https://qianjige.app.workbuddy.host/",
+  "repository": {
+    "url": "https://github.com/chenwengui23/wanjige-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://qianjige.app.workbuddy.host/mcp?key={api_key}",
+      "headers": [
+        {
+          "name": "Accept",
+          "description": "Required by the Streamable HTTP transport. Set to: application/json, text/event-stream",
+          "isRequired": true,
+          "isSecret": false,
+          "value": "application/json, text/event-stream"
+        }
+      ],
+      "variables": {
+        "api_key": {
+          "description": "Wanjige API key, starts with qj-sk-. Register free at https://qianjige.app.workbuddy.host/account.html — 1000 free credits included, no card required.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string",
+          "placeholder": "qj-sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      }
+    }
+  ]
+}
