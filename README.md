@@ -47,6 +47,25 @@ AI 平台最怕两件事：**工具装多了模型变笨，工具不够活干不
 > Key 支持三种携带方式：**推荐 `?key=` 查询参数**、`_meta.api_key`、`X-Api-Key` 请求头。
 > ⚠️ 注意：部分托管网关会剥离自定义请求头，**请优先使用 `?key=` 查询参数**，它最稳定。
 
+**只支持 stdio 的客户端（Claude Desktop 等）：**
+
+Claude Desktop 这类客户端只认 stdio 启动命令 —— 用官方桥接包 `wanjige-mcp` 一条命令接入：
+
+```json
+{
+  "mcpServers": {
+    "wanjige": {
+      "command": "npx",
+      "args": ["-y", "wanjige-mcp"],
+      "env": { "WANJIGE_API_KEY": "qj-sk-你的KEY" }
+    }
+  }
+}
+```
+
+> 桥接包**零依赖**（Node >= 18），已发布到 npm：[`wanjige-mcp`](https://www.npmjs.com/package/wanjige-mcp)
+> `env` 可留空 —— 不填 Key 时走**免注册试用**（每天 3 次真实调用），先试再注册。
+
 ### 3. 直接对话
 
 ```
