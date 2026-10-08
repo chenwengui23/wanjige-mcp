@@ -3,12 +3,34 @@
   "name": "io.github.chenwengui23/wanjige",
   "title": "万机阁 Wanjige — 中文 AI 工具市场",
   "description": "Chinese MCP tool marketplace: 15,552 callable tools for weather, stocks, FX, docs and calculations.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://qianjige.app.workbuddy.host/",
   "repository": {
     "url": "https://github.com/chenwengui23/wanjige-mcp",
     "source": "github"
   },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "wanjige-mcp",
+      "version": "1.0.1",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "WANJIGE_API_KEY",
+          "description": "Wanjige API key starting with qj-sk-. Optional - without it the bridge runs in free trial mode (3 real calls per day). Get a key with 1000 free credits at https://qianjige.app.workbuddy.host/account.html",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string",
+          "placeholder": "qj-sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
