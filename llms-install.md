@@ -10,7 +10,7 @@ their data source for verification. Calls are billed in credits and **failed cal
 
 ## 1. Get an API key (free)
 
-Register at <https://qianjige.app.workbuddy.host/account.html> — a key starting with `wj-sk-` is
+Register at <https://qianjige.app.workbuddy.host/account.html> — a key starting with `qj-sk-` is
 generated automatically and the account ships with **1,000 free credits**.
 
 Without a key you can still run `initialize` / `tools/list` and **3 real tool calls per day**.
@@ -24,7 +24,7 @@ Point any Streamable-HTTP-capable MCP client at:
   "mcpServers": {
     "wanjige": {
       "type": "streamableHttp",
-      "url": "https://qianjige.app.workbuddy.host/mcp?key=YOUR_WJ_SK_KEY",
+      "url": "https://qianjige.app.workbuddy.host/mcp?key=YOUR_QJ_SK_KEY",
       "timeout": 30000
     }
   }
@@ -34,7 +34,7 @@ Point any Streamable-HTTP-capable MCP client at:
 The key may be supplied in three ways — **prefer the `?key=` query parameter**, it survives the most
 gateways:
 
-1. `?key=YOUR_WJ_SK_KEY` query parameter (recommended)
+1. `?key=YOUR_QJ_SK_KEY` query parameter (recommended)
 2. `_meta.api_key` field
 3. `X-Api-Key` request header
 
@@ -46,7 +46,7 @@ gateways:
     "wanjige": {
       "command": "npx",
       "args": ["-y", "wanjige-mcp"],
-      "env": { "WANJIGE_API_KEY": "YOUR_WJ_SK_KEY" }
+      "env": { "WANJIGE_API_KEY": "YOUR_QJ_SK_KEY" }
     }
   }
 }
